@@ -1,0 +1,55 @@
+{
+  "name": "@senditapp/mcp",
+  "version": "0.2.0",
+  "description": "SendIt terminal CLI and MCP bridge for AI agents and social publishing",
+  "license": "MIT",
+  "bin": {
+    "sendit-mcp": "dist/cli.js",
+    "sendit": "dist/cli.js"
+  },
+  "main": "./dist/cli.js",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "test": "npm run build && node --test test/*.test.mjs tests/*.test.mjs",
+    "prepublishOnly": "npm run build",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  },
+  "keywords": [
+    "mcp",
+    "sendit",
+    "social-media",
+    "claude",
+    "ai-assistant",
+    "chatgpt",
+    "vscode",
+    "copilot",
+    "hermes",
+    "openclaw",
+    "grok",
+    "muse",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shree-git/sendit-agent-integrations.git",
+    "directory": "cli"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "homepage": "https://github.com/Shree-git/sendit-agent-integrations",
+  "bugs": {
+    "url": "https://github.com/Shree-git/sendit-agent-integrations/issues"
+  }
+}

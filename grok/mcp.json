@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "sendit": {
+      "url": "https://sendit.infiniteappsai.com/api/mcp"
+    }
+  }
+}

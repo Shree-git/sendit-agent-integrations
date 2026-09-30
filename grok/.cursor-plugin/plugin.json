@@ -1,0 +1,12 @@
+{
+  "name": "sendit-grok",
+  "version": "1.0.0",
+  "description": "Connect SendIt social accounts, prepare posts, publish authorized content, and check scheduling and analytics.",
+  "author": { "name": "InfiniteApps LLC" },
+  "homepage": "https://sendit.infiniteappsai.com/start/grok",
+  "license": "MIT",
+  "keywords": ["sendit", "grok", "social-media", "publishing", "mcp"],
+  "logo": "assets/logo.png",
+  "skills": "./skills",
+  "mcpServers": "./mcp.json"
+}

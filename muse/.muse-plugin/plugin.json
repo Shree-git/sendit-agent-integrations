@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "name": "sendit",
+  "displayName": "SendIt",
+  "version": "0.1.0",
+  "description": "Social publishing, scheduling, and analytics through SendIt's OAuth MCP connector.",
+  "compat": { "source": "native", "manifestDir": ".muse-plugin" },
+  "capabilities": {
+    "skills": [{ "id": "sendit-social", "path": "skills/sendit-social/SKILL.md", "enabledDefault": true }],
+    "commands": [],
+    "hooks": [],
+    "mcpServers": [],
+    "reminders": []
+  }
+}

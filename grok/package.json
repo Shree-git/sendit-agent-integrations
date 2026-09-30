@@ -1,0 +1,12 @@
+{
+  "name": "@senditapp/grok-integration",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SendIt Grok custom connector, Cursor-format plugin candidate, Bot skill, and Responses API example",
+  "license": "MIT",
+  "scripts": {
+    "test": "python3 -m unittest discover -s test -p 'test_*.py' -v",
+    "smoke": "python3 scripts/grok_api.py --smoke",
+    "dry-run": "python3 scripts/grok_api.py --dry-run"
+  }
+}
