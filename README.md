@@ -11,7 +11,15 @@ It exposed 148 tools during this release's read-only discovery check.
 | Grok | Custom MCP connector, Bot skill, and Responses API bot | Add the public endpoint at grok.com/connectors; use the public Grok bundle for bot workflows |
 | Meta Muse | Hosted MCP connector submission and custom connection brief | Read the public Muse connection brief; directory availability requires Meta approval |
 | Muse Code | Native OAuth MCP settings and installable workflow skill | Run the public installer, then `muse mcp login sendit` |
-| Any terminal agent | SendIt CLI and stdio bridge | [Public CLI archive and commands](https://github.com/Shree-git/sendit-agent-integrations/tree/main/cli) |
+| Any terminal agent | SendIt CLI and stdio bridge | `npx --yes --package=@senditapp/mcp@0.2.1 sendit --help` |
+
+OpenClaw also supports installing the pinned native plugin from npm:
+
+```bash
+openclaw plugins install @senditapp/openclaw@0.2.0
+```
+
+The [CLI guide](https://github.com/Shree-git/sendit-agent-integrations/tree/main/cli) includes persistent installation, stdio configuration, and the [public GitHub archive fallback](https://github.com/Shree-git/sendit-agent-integrations/releases/download/v0.2.1/senditapp-mcp-0.2.1.tgz).
 
 The public source is [sendit-agent-integrations](https://github.com/Shree-git/sendit-agent-integrations).
 Hermes and OpenClaw retain their existing dedicated public repositories.

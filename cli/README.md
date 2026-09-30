@@ -4,19 +4,23 @@ Discover and call SendIt tools from the terminal, or connect an AI host through 
 Requires Node.js 20 or later.
 
 ```bash
-npx --yes --package=https://github.com/Shree-git/sendit-agent-integrations/releases/download/v0.2.1/senditapp-mcp-0.2.1.tgz sendit --help
-npx --yes --package=https://github.com/Shree-git/sendit-agent-integrations/releases/download/v0.2.1/senditapp-mcp-0.2.1.tgz sendit tools
+npx --yes --package=@senditapp/mcp@0.2.1 sendit --help
+npx --yes --package=@senditapp/mcp@0.2.1 sendit tools
 ```
 
 For a persistent command:
 
 ```bash
-npm install -g https://github.com/Shree-git/sendit-agent-integrations/releases/download/v0.2.1/senditapp-mcp-0.2.1.tgz
+npm install -g @senditapp/mcp@0.2.1
 sendit --help
 ```
 
-The archive above is publicly available and was tested with `npx`.
-The equivalent registry command is `npx @senditapp/mcp@0.2.1` after that version is published.
+Version `0.2.1` is published on npm.
+Use the tested [public GitHub release archive](https://github.com/Shree-git/sendit-agent-integrations/releases/download/v0.2.1/senditapp-mcp-0.2.1.tgz) as a fallback:
+
+```bash
+npx --yes --package=https://github.com/Shree-git/sendit-agent-integrations/releases/download/v0.2.1/senditapp-mcp-0.2.1.tgz sendit --help
+```
 
 ## Terminal commands
 
@@ -69,7 +73,7 @@ Add this entry to a host that uses `mcpServers`:
   "mcpServers": {
     "sendit": {
       "command": "npx",
-      "args": ["-y", "--package=https://github.com/Shree-git/sendit-agent-integrations/releases/download/v0.2.1/senditapp-mcp-0.2.1.tgz", "sendit", "serve"],
+      "args": ["-y", "--package=@senditapp/mcp@0.2.1", "sendit", "serve"],
       "env": { "SENDIT_API_KEY": "YOUR_SENDIT_API_KEY" }
     }
   }

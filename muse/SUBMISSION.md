@@ -1,6 +1,6 @@
 # SendIt Muse connector submission
 
-Prepared on September 29, 2026 at [Muse Connector Platform](https://muse.ai/platform).
+Submitted on September 29, 2026 in Pacific time at [Muse Connector Platform](https://muse.ai/platform).
 Directory availability requires Meta review and approval.
 
 | Field | Value |
@@ -34,6 +34,6 @@ The separate `/api/mcp/chatgpt` submission profile returned 14 tools.
 OAuth metadata advertises PKCE, dynamic client registration, and refresh tokens.
 Discovery does not prove a completed user OAuth grant or successful social publication.
 
-The form is prepared through its final Review step.
-Accepting Muse Connector Terms and submitting requires the user's confirmation at that step.
-Update this status after a visible submission receipt is returned.
+The user approved accepting Muse Connector Terms and submitting the application.
+Muse confirmed receipt with “Thank you for your submission!” and “We’ll review SendIt and get in touch.”
+Meta review and public directory approval are pending.

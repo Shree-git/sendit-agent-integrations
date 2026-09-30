@@ -1,13 +1,22 @@
 # SendIt for Grok
 
 Use SendIt's public remote MCP endpoint with grok.com or an xAI API bot.
-This package also contains a Cursor-format plugin candidate and a saved-skill workflow for Grok Bot.
+This package also contains a Cursor-format plugin awaiting Marketplace review and a saved-skill workflow for Grok Bot.
 
 | Interface | Setup | Status |
 | --- | --- | --- |
 | grok.com | Add a custom connector at `https://sendit.infiniteappsai.com/api/mcp` | Official xAI custom-connector route |
-| Grok Bot | Marketplace plugin and saved skill | Package ready for review; installation in Bot unverified |
+| Cursor | Cursor-format plugin and OAuth MCP connection | Publisher application received September 29, 2026 (Pacific); review pending |
+| Grok Bot | Marketplace connector and saved skill | Native Bot import and listing remain unverified |
 | xAI API bot | `scripts/grok_api.py` | Responses request and CLI contracts tested locally |
+
+## Cursor Marketplace review
+
+Cursor received SendIt's publisher application on September 29, 2026, in the America/Los_Angeles timezone.
+The submission page showed "Thanks for applying" and confirmed receipt for review.
+Review is pending; a public Cursor listing has not been confirmed.
+Native Grok Bot import and listing remain unverified.
+The submitted public source is [sendit-agent-integrations](https://github.com/Shree-git/sendit-agent-integrations).
 
 ## Connect grok.com
 
@@ -39,8 +48,8 @@ Use secure credential handoff for CLI setup, and omit credentials from public Bo
 
 For local Cursor acceptance testing, copy this entire directory to `~/.cursor/plugins/local/sendit-grok`, reload Cursor, authenticate SendIt, and run the read-only account-list prompt.
 Local plugin imports must be allowed by the host or team policy.
-For public review, host this directory in a public Git repository and submit the repository at [Cursor Marketplace publishing](https://cursor.com/marketplace/publish).
-A multi-plugin repository needs a `.cursor-plugin/marketplace.json` entry pointing to this directory.
+The application was submitted through [Cursor Marketplace publishing](https://cursor.com/marketplace/publish).
+The public repository's `.cursor-plugin/marketplace.json` points to the `grok/` plugin directory.
 Catalog acceptance and an installed Grok Bot connection require separate evidence.
 
 ## Run an API bot
