@@ -38,7 +38,7 @@ export async function startServe(): Promise<void> {
       `[sendit-mcp] Failed to initialize remote session: ${err instanceof Error ? err.message : err}`
     );
     await remote.close();
-    throw new Error('Could not connect to SendIt. Check your endpoint and API key.');
+    throw new Error('Could not connect to SendIt. Check your endpoint and API key.', { cause: err });
   }
 
   const server = new Server(
