@@ -49,8 +49,8 @@ The stable Muse Code 1.4.1 build tested on September 29, 2026 reports that plugi
 The public SendIt CLI works in Muse's execution environment:
 
 ```bash
-npx @senditapp/mcp@0.2.0 tools
-npx @senditapp/mcp@0.2.0 config muse
+npx --yes --package=https://github.com/Shree-git/sendit-agent-integrations/releases/download/v0.2.1/senditapp-mcp-0.2.1.tgz sendit tools
+npx --yes --package=https://github.com/Shree-git/sendit-agent-integrations/releases/download/v0.2.1/senditapp-mcp-0.2.1.tgz sendit config muse
 ```
 
 Keep `SENDIT_API_KEY` in the environment for authenticated terminal calls.

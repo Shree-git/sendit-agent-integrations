@@ -40,9 +40,11 @@ That stable build disables its preview plugin feature, so skill installation is 
 - Grok: eight request, permission, dry-run, smoke-result, and marketplace discovery tests passed.
 - Muse: five settings installer tests passed, followed by native skill validation and installation.
 - Public GitHub CI passed for the agent integration and OpenClaw repositories.
+- An authenticated read of platform requirements succeeded through the installed SendIt connector.
 
 No test sent a social post.
-Production tool discovery and metadata verification do not prove a completed user OAuth grant.
+Production discovery and registry metadata do not prove a new OAuth grant in Hermes, Grok, or Muse.
+The installed connector read verifies an existing authenticated connection only.
 Live xAI API execution needs the user's xAI and SendIt credentials.
 
 ## Public source and submissions
