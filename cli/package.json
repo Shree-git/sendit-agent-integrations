@@ -1,6 +1,6 @@
 {
   "name": "@senditapp/mcp",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "SendIt terminal CLI and MCP bridge for AI agents and social publishing",
   "license": "MIT",
   "bin": {
@@ -42,7 +42,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Shree-git/sendit-agent-integrations.git",
+    "url": "git+https://github.com/Shree-git/sendit-agent-integrations.git",
     "directory": "cli"
   },
   "engines": {

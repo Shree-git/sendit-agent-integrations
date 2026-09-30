@@ -7,7 +7,7 @@ It exposed 148 tools during this release's read-only discovery check.
 | Host | Public integration | Install path |
 | --- | --- | --- |
 | Hermes | Workflow skill and native OAuth MCP configuration | `hermes skills install Shree-git/sendit-hermes-skills/skills/sendit` |
-| OpenClaw | Native plugin and ClawHub workflow skill | [Public plugin release](https://github.com/Shree-git/sendit-openclaw/releases/tag/v0.2.0) |
+| OpenClaw | Native plugin and ClawHub workflow skill | `openclaw plugins install clawhub:@senditapp/openclaw@0.2.0` |
 | Grok | Custom MCP connector, Bot skill, and Responses API bot | Add the public endpoint at grok.com/connectors; use the public Grok bundle for bot workflows |
 | Meta Muse | Hosted MCP connector submission and custom connection brief | Read the public Muse connection brief; directory availability requires Meta approval |
 | Muse Code | Native OAuth MCP settings and installable workflow skill | Run the public installer, then `muse mcp login sendit` |
@@ -30,3 +30,5 @@ Its native Code plugin format is documented in developer preview, but the tested
 The native skill and MCP settings path works in that build.
 
 See the package READMEs for source links, exact commands, and validation boundaries.
+
+[Release status and validation](https://github.com/Shree-git/sendit-agent-integrations/blob/main/RELEASE_STATUS.md) records publication and review status.

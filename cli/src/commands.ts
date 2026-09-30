@@ -47,7 +47,7 @@ export function clientConfig(client: string): unknown {
       };
     case 'openclaw':
       return {
-        install: 'openclaw plugins install npm:@senditapp/openclaw',
+        install: 'openclaw plugins install clawhub:@senditapp/openclaw@0.2.0',
         setup: 'openclaw sendit auth login',
         documentation: 'https://github.com/Shree-git/sendit-openclaw',
       };
