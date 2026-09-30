@@ -1,14 +1,19 @@
 import importlib.util
 import json
 import pathlib
+import shutil
 import subprocess
 import sys
+import tempfile
 import unittest
 
 SCRIPT = pathlib.Path(__file__).resolve().parents[1] / 'scripts' / 'grok_api.py'
 spec = importlib.util.spec_from_file_location('grok_api', SCRIPT)
 api = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(api)
+marketplace_spec = importlib.util.spec_from_file_location('validate_marketplace', SCRIPT.with_name('validate_marketplace.py'))
+marketplace_validator = importlib.util.module_from_spec(marketplace_spec)
+marketplace_spec.loader.exec_module(marketplace_validator)
 
 class GrokContractTests(unittest.TestCase):
     def test_responses_contract_and_read_only_defaults(self):
@@ -55,5 +60,36 @@ class GrokContractTests(unittest.TestCase):
         mcp = json.loads((root / 'mcp.json').read_text())
         self.assertEqual(mcp['mcpServers']['sendit']['url'], api.DEFAULT_MCP_URL)
         self.assertNotIn('headers', mcp['mcpServers']['sendit'])
+
+    def exported_marketplace(self, directory):
+        root = pathlib.Path(directory)
+        source = SCRIPT.parents[1]
+        shutil.copytree(source / 'distribution' / '.cursor-plugin', root / '.cursor-plugin')
+        shutil.copytree(source, root / 'grok', ignore=shutil.ignore_patterns('__pycache__', 'distribution'))
+        (root / 'cli').mkdir()
+        (root / 'muse').mkdir()
+        return root
+
+    def test_exported_marketplace_discovers_grok_and_bundled_paths(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = self.exported_marketplace(directory)
+            self.assertEqual(marketplace_validator.validate_marketplace(root), ['sendit-grok'])
+            (root / 'grok' / 'mcp.json').unlink()
+            with self.assertRaises(ValueError):
+                marketplace_validator.validate_marketplace(root)
+
+    def test_exported_marketplace_rejects_traversal_duplicate_and_mismatched_name(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = self.exported_marketplace(directory)
+            path = root / '.cursor-plugin' / 'marketplace.json'
+            original = json.loads(path.read_text())
+            for mutation in ('traversal', 'duplicate', 'name'):
+                manifest = json.loads(json.dumps(original))
+                if mutation == 'traversal': manifest['plugins'][0]['source'] = '../grok'
+                if mutation == 'duplicate': manifest['plugins'].append(manifest['plugins'][0].copy())
+                if mutation == 'name': manifest['plugins'][0]['name'] = 'wrong-name'
+                path.write_text(json.dumps(manifest))
+                with self.assertRaises(ValueError):
+                    marketplace_validator.validate_marketplace(root)
 
 if __name__ == '__main__': unittest.main()

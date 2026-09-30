@@ -1,0 +1,18 @@
+{
+  "name": "sendit-agent-integrations",
+  "owner": {
+    "name": "InfiniteApps LLC",
+    "email": "support@infiniteappsai.com"
+  },
+  "metadata": {
+    "description": "Public SendIt agent integrations with a SendIt social publishing plugin.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "sendit-grok",
+      "source": "grok",
+      "description": "Connect SendIt social accounts, prepare posts, publish authorized content, and check scheduling and analytics."
+    }
+  ]
+}
