@@ -11,7 +11,7 @@ Read-only production discovery returned 148 tools.
 | Official MCP Registry | `io.github.Shree-git/sendit` 1.2.0 is active and latest, with the canonical endpoint and public source | User OAuth and social writes were not part of this metadata check |
 | Hermes | Public skill tap and release 0.3.0; actual native GitHub skill install verified | Upstream skill and OAuth catalog PR #27727 is open and unmerged |
 | OpenClaw runtime | npm and ClawHub `@senditapp/openclaw` 0.2.0 are public; actual installs from both registries loaded all 41 tools without diagnostics | A new host's OAuth grant and social writes were not part of installation acceptance |
-| OpenClaw standalone skill | ClawHub skill 0.2.1 has a clean security verdict; also bundled in the runtime | Its generated Skill Card is missing even after an owner rescan, so standalone registry verification fails |
+| OpenClaw standalone skill | ClawHub skill 0.2.1 has a clean security verdict and passes registry verification with its generated Skill Card; also bundled in the runtime | No publication or registry verification blocker for this version |
 | Terminal CLI | npm `@senditapp/mcp` 0.2.1 and the public GitHub archive provide discovery, calls, verification, host config, and the stdio bridge | Social publication was not part of CLI acceptance |
 | Grok | Public custom connector instructions, Responses API bot, workflow skill, and valid Cursor marketplace bundle; Cursor confirmed receipt of the publisher application | Cursor review is pending; native Grok Bot import and listing are unverified |
 | Muse | Public connection brief, native Muse Code skill, and OAuth settings installer; Meta confirmed receipt of the SendIt connector submission | Meta review and directory approval are pending |
@@ -44,6 +44,7 @@ That stable build disables its preview plugin feature, so skill installation is 
 - Public GitHub CI passed for the agent integration and OpenClaw repositories.
 - An authenticated read of platform requirements succeeded through the installed SendIt connector.
 - Both npm registry versions are public and tagged `latest`; their archives match the tested packages.
+- Standalone ClawHub skill verification passes with `ok: true`, no failure reasons, and its generated Skill Card available.
 - The CLI runs from npm as version 0.2.1 and discovers all 148 production tools.
 - Muse and Cursor displayed successful submission receipts after the user approved their respective terms.
 
